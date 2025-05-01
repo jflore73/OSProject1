@@ -1,0 +1,4 @@
+﻿Ed,5000
+Olivia,1000
+Liam,2000
+Caitlyn,3500
