@@ -9,6 +9,7 @@ class Program
     {
         //let n be the number of processes and m the number of available resources of each type
         //Setup of data structures
+        /*
         int processes, resources;
         int[] available;
         int[,] max;
@@ -56,6 +57,26 @@ class Program
         {
             Console.WriteLine("Not Safe State D:");
         }
+        */
+        
+        List<Person> allPersons = new List<Person>();
+        allPersons.Add(new Person("Ed", 5, 1, 1, 7));
+        allPersons.Add(new Person("Olivia", 3, 2, 1, 1));
+        allPersons.Add(new Person("Liam", 3, 3, 2, 1));
+        allPersons.Add(new Person("Caitlyn", 4, 6, 1, 2));
+        allPersons.Add(new Person("Damian", 6, 3, 2, 5));
+        Thread[] threads = new Thread[allPersons.Count];
+        for (int i = 0; i < allPersons.Count; i++)
+        {
+            threads[i] = new Thread(allPersons.ElementAt<Person>(i).Run);
+        }
+        for (int i = 0; i < threads.Length; i++)
+        {
+            threads[i].Start();
+        }
+        
+
+
 
         /*
         String[] data;
@@ -83,6 +104,7 @@ class Program
             threads[i].Start();
         }*/
     }
+    /*
     public static bool safetyCheck(int[] able, int[,] need, int[,] alloc) {
         int[] work = new int[able.Length];
         bool[] finish = new bool[need.GetLength(0)];
@@ -145,6 +167,6 @@ class Program
         }
         return safe;
 
-    }
+    }*/
 
 }
